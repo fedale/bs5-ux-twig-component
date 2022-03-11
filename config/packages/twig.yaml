@@ -3,8 +3,8 @@ twig:
     globals:
         tabler:
             dir: ltr # see if it is present in symfony/easyadmin
-            theme: dark 
-            layout:  # blank boxed fluid 
+            theme: light
+            layout: fluid # blank boxed fluid 
 
 when@test:
     twig:

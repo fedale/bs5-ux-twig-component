@@ -9,11 +9,21 @@ use Symfony\Component\Routing\Annotation\Route;
 class TablerController extends AbstractController
 {
     /**
-     * @Route("/", name="app_tabler")
+     * @Route("/bs5/accordion", name="bs5_accordion")
      */
-    public function index(): Response
+    public function accordion(): Response
     {
-        return $this->render('tabler/index.html.twig', [
+        return $this->render('bs5/accordion.html.twig', [
+            'controller_name' => 'TablerController',
+        ]);
+    }
+
+    /**
+     * @Route("/bs5/alert", name="bs5_alert")
+     */
+    public function alert(): Response
+    {
+        return $this->render('bs5/alert.html.twig', [
             'controller_name' => 'TablerController',
         ]);
     }

@@ -131,9 +131,6 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
-    "symfony/amqp-messenger": {
-        "version": "v5.4.3"
-    },
     "symfony/asset": {
         "version": "v5.4.3"
     },
@@ -336,9 +333,6 @@
     "symfony/polyfill-mbstring": {
         "version": "v1.24.0"
     },
-    "symfony/polyfill-php73": {
-        "version": "v1.24.0"
-    },
     "symfony/polyfill-php80": {
         "version": "v1.24.0"
     },
@@ -355,9 +349,6 @@
         "version": "v5.4.3"
     },
     "symfony/proxy-manager-bridge": {
-        "version": "v5.4.3"
-    },
-    "symfony/redis-messenger": {
         "version": "v5.4.3"
     },
     "symfony/routing": {
@@ -392,9 +383,6 @@
         "version": "v5.4.3"
     },
     "symfony/security-csrf": {
-        "version": "v5.4.3"
-    },
-    "symfony/security-guard": {
         "version": "v5.4.3"
     },
     "symfony/security-http": {
@@ -443,6 +431,9 @@
             "config/packages/twig.yaml",
             "templates/base.html.twig"
         ]
+    },
+    "symfony/ux-twig-component": {
+        "version": "v2.0.1"
     },
     "symfony/validator": {
         "version": "5.4",

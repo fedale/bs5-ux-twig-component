@@ -1,0 +1,29 @@
+{% extends 'sidebarcolumn.html.twig' %}
+
+
+{% block body%}
+<div class="container pt-5">
+
+<h3>Default alert</h3>
+{{ component('alert', { 'dismiss': true }) }}
+
+<h3>Custom alert</h3>
+{{ component('alert', { 
+      'type': 'success',
+      'content': 'Message alert',
+      'dismiss': false
+  }
+) 
+}}
+
+
+<h3>Custom alert with dismiss</h3>
+  {{ component('alert', { 
+        'type': 'danger',
+        'content': 'Message alert',
+        'dismiss': true
+    }) 
+  }}
+
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+
+<div class="accordion {{ this.options['flush']|default(false) ? 'accordion-flush' : '' }} {{ this.options['class'] }}" id="{{ this.options['id'] }}">
+{% for item in this.items %}
+  <div class="{{ this.options['class-item'] }}">
+    <h2 class="{{ this.options['class-header'] }}" id="{{ this.options['class-header'] }}-{{ loop.index }}">
+      <button class="{{ this.options['class-button'] }}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{{ loop.index }}" aria-expanded="true" aria-controls="collapse-{{ loop.index }}">
+        {{ item.label }}
+      </button>
+    </h2>
+    <div id="collapse-{{ loop.index }}" class="accordion-collapse collapse {{ item.show|default(false) ? 'show' : '' }}" aria-labelledby="{{ this.options['class-header'] }}-{{ loop.index }}" {% if item.alwaysOpen|default(false) %} data-bs-parent="#{{ this.options['id'] }}" {% endif %}>
+      <div class="{{ this.options['class-body'] }}">
+        {{ item.content | raw }}
+        
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
