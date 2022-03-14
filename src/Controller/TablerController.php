@@ -14,7 +14,7 @@ class TablerController extends AbstractController
     public function accordion(): Response
     {
         return $this->render('bs5/accordion.html.twig', [
-            'controller_name' => 'TablerController',
+            'title' => 'Accordion',
         ]);
     }
 
@@ -24,7 +24,7 @@ class TablerController extends AbstractController
     public function alert(): Response
     {
         return $this->render('bs5/alert.html.twig', [
-            'controller_name' => 'TablerController',
+            'title' => 'Alert'
         ]);
     }
 }

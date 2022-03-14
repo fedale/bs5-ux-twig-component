@@ -1,5 +1,5 @@
 import { Controller } from '@hotwired/stimulus';
-import { Alert } from 'bootstrap';
+//import { Collapse } from 'bootstrap/js/dist/collapse';
 
 export default class extends Controller {
     connect() {
