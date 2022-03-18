@@ -18,7 +18,6 @@ class AccordionComponent
     #[PreMount]
     public function preMount(array $data): array
     {
-        dump('PreMount');
         $resolver = new OptionsResolver();
         $resolver->setDefault('items', function (OptionsResolver $itemsResolver) {
             $itemsResolver

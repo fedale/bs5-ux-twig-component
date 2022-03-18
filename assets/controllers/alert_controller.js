@@ -1,9 +1,9 @@
 import { Controller } from '@hotwired/stimulus';
-//import { Collapse } from 'bootstrap/js/dist/collapse';
+import { Alert } from 'bootstrap/js/dist/alert';
 
 export default class extends Controller {
     connect() {
-        console.log('alert_controller');
+        console.log(Alert);
         return new Alert(this.element);
     }
 }

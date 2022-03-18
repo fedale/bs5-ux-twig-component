@@ -1,8 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body%}
-<div class="container pt-5">
-<h3>{{ title }}</h3>
+
+<h1>{{ component }}</h1>
+
 {{ component('accordion', { 
     'items': 
     [
@@ -25,5 +26,5 @@
     }
 ) 
 }}
-</div>
+
 {% endblock %}
