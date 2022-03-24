@@ -1,6 +1,11 @@
-<div class="alert alert-{{ type }} {{ dismiss ? 'alert-dismissible fade show' : '' }}" role="alert" id="{{ id }}" data-controller="alert">
+<div 
+    id="{{ id }}"
+    class="alert alert-{{ type }} {{ dismiss ? 'alert-dismissible fade show' : '' }}"
+    role="alert"
+    data-controller="alert"
+    data-alert-dismiss-value="{{ dismiss ? "true" : "false" }}"
+>
 {{ content }}
-
 {% if dismiss %}
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 {% endif %}

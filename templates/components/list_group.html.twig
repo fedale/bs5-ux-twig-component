@@ -1,0 +1,22 @@
+<{{ options.containerTag }}
+    id="{{ options.id }}"
+    class="{{ options.class }} {{ options.flush ? 'list-group-flush' : '' }} {{ options.numbered ? 'list-group-numbered' : '' }}"
+    data-controller="list-group"
+    role="{{ options.role }}"
+>
+{% for item in items %}
+<{{ options.innerTag }}
+    {% if options.innerTag == 'a' %}
+    href="{{ item.url }}"
+    {% endif %}
+    class="{{ item.class }} {{ item.disabled ? 'disabled' : '' }} {{ options.innerTag == 'a' or options.innerTag == 'button' ? 'list-group-item-action' : '' }} {{ item.active ? 'active' : '' }}"
+    {% if item.role %}role="{{ item.role }}"{% endif %}
+    {% if item.toggle %}data-bs-toggle="{{ item.toggle }}"{% endif %}
+    {% if item.active %}aria-current="true"{% endif %}
+    {% if item.disabled %}aria-current="true"{% endif %}
+>
+    {{ item.content | raw}}
+</{{ options.innerTag }}>
+{% endfor %}
+
+</{{ options.containerTag }}>

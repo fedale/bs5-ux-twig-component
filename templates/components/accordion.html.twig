@@ -1,4 +1,8 @@
-<div class="{{ options['class'] }} {{ options['flush']|default(false) ? 'accordion-flush' : '' }} " id="{{ options['id'] }}" data-controller="accordion">
+<div 
+  id="{{ options['id'] }}" 
+  class="{{ options['class'] }} {{ options['flush']|default(false) ? 'accordion-flush' : '' }} " 
+  data-controller="accordion"
+>
 {% for item in items %}
   <div class="{{ options['class-item'] }}">
     <h2 
@@ -18,9 +22,9 @@
     </h2>
     <div 
       id="collapse-{{ loop.index }}" 
-      class="accordion-collapse collapse {{ (item.show|default(false) or item.alwaysOpen|default(false)) ? 'show' : '' }}" 
+      class="accordion-collapse collapse {{ (item.show or item.alwaysOpen) ? 'show' : '' }}" 
       aria-labelledby="{{ options['class-header'] }}-{{ loop.index }}" 
-      {% if item.alwaysOpen|default(false) %} data-bs-parent="#{{ options['id'] }}" {% endif %}
+      {% if item.alwaysOpen %} data-bs-parent="#{{ options['id'] }}" {% endif %}
     >
       <div class="{{ options['class-body'] }}">
         {{ item.content | raw }}

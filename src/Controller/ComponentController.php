@@ -32,6 +32,19 @@ class ComponentController extends AbstractController
         return $this->renderComponent('alert');
     }
 
+
+    /**
+     * @Route("/bs5/list_group", name="bs5_list_group")
+     */
+    public function listGroup(): Response
+    {
+        return $this->renderComponent('list_group');
+    }
+
+
+    /**
+     * 
+     */
     private function renderComponent(string $component = null): Response {
 
         return $this->render('bs5/' . $component .'.html.twig', [
