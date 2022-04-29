@@ -41,6 +41,13 @@ class ComponentController extends AbstractController
         return $this->renderComponent('list_group');
     }
 
+    /**
+     * @Route("/bs5/modal", name="bs5_modal")
+     */
+    public function modal(): Response
+    {
+        return $this->renderComponent('modal');
+    }
 
     /**
      * 

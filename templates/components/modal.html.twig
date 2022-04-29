@@ -1,0 +1,31 @@
+<div
+    class="modal fade"
+    tabindex="-1"
+    aria-hidden="true"
+    data-modal-target="modal"
+    data-bs-backdrop="{{ backdrop }}"
+    data-bs-keyboard="{{ keyboard }}"
+    data-bs-focus="{{ focus }}"
+>
+    <div class="modal-dialog {{ size }} {{ centered }} {{ scrollable }}">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ modalTitle }}</h5>
+                <button type="button" class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="{{ closeLabel }}"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">{{ closeLabel }}
+                </button>
+                <button type="button" class="btn btn-primary">
+                    {{ okLabel }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

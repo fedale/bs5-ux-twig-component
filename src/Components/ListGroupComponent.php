@@ -54,8 +54,6 @@ class ListGroupComponent
             ;
         });
 
-        //$resolver->setNormalizer()
-
         return $resolver->resolve($data);
     }
     

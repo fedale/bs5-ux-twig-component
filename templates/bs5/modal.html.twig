@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body%}
+<h1>{{ component }}</h1>
+
+<h3>Default modal</h3>
+
+
+<div {{ stimulus_controller('modal') }}>
+  <button
+      class="btn btn-primary btn-sm"
+      data-action="modal#openModal"
+  >Add+</button>
+  {{ component('modal') 
+}}
+
+</div>
+
+{% endblock %}
