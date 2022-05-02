@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body%}
+<h1>{{ component }}</h1>
+
+<h3>Headings</h3>
+  {% for i in 1..6 %}
+  <h{{ i }}>
+  Example heading 
+  {{ component('badge', { 
+        'type': 'secondary',
+        'content': 'New',
+      }) 
+  }}
+  </h{{ i }}>
+  {% endfor  %}
+
+<h3>Buttons</h3>
+  {% for type in ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']  %}
+  {{ component('badge', { 
+        'type': type,
+        'content': type|capitalize,
+        'text': type in ['warning', 'info', 'light'] ? 'dark' : 'light'
+      }) 
+  }}
+  {% endfor  %}
+
+
+<h3>Background colors</h3>
+  {% for type in ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']  %}
+  {{ component('badge', { 
+        'type': type,
+        'content': type|capitalize,
+        'text': type in ['warning', 'info', 'light'] ? 'dark' : 'light'
+      }) 
+  }}
+  {% endfor  %}
+
+<h3>Pill badges</h3>
+  {% for type in ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']  %}
+  {{ component('badge', { 
+        'type': type,
+        'content': type|capitalize,
+        'pill': true,
+        'text': type in ['warning', 'info', 'light'] ? 'dark' : 'light'
+      }) 
+  }}
+  {% endfor  %}
+
+{% endblock %}

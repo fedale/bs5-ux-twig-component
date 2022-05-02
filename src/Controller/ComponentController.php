@@ -32,6 +32,22 @@ class ComponentController extends AbstractController
         return $this->renderComponent('alert');
     }
 
+    /**
+     * @Route("/bs5/badge", name="bs5_badge")
+     */
+    public function badge(): Response
+    {
+        return $this->renderComponent('badge');
+    }
+
+    /**
+     * @Route("/bs5/button", name="bs5_button")
+     */
+    public function button(): Response
+    {
+        return $this->renderComponent('button');
+    }
+
 
     /**
      * @Route("/bs5/list_group", name="bs5_list_group")

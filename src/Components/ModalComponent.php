@@ -21,7 +21,6 @@ class ModalComponent
     public string $keyboard;
     public string $focus;
 
-    public bool $dismiss;
     public bool $centered;
     public bool $scrollable;
 
