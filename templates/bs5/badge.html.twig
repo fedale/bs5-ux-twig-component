@@ -16,11 +16,19 @@
   </h{{ i }}>
   {% endfor  %}
 
+  
+
 <h3>Buttons</h3>
   {% for type in ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']  %}
-  {{ component('badge', { 
+  {{ component('button', { 
         'type': type,
-        'content': type|capitalize,
+        'size': 'sm',
+        'content':  'Notification '  ~ component('badge', { 
+            'content': random(1, 100),
+            'text': 'light',
+            'type': 'secondary'
+          }) 
+        ,
         'text': type in ['warning', 'info', 'light'] ? 'dark' : 'light'
       }) 
   }}
