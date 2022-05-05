@@ -65,6 +65,11 @@ class ButtonComponent
      */
     public $disabled;
 
+    /**
+     * @var bool
+     */
+    public $raw;
+
     #[PreMount]
     public function preMount(array $data): array
     {
@@ -79,6 +84,7 @@ class ButtonComponent
             'outline' => false,
             'size' => '',
             'disabled' => false,
+            'raw' => true
         ]);
         
         $resolver->setDefault('tagType', function (Options $options) {

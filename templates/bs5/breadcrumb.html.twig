@@ -1,0 +1,291 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body%}
+<h1>{{ component }}</h1>
+
+<h3>List group standard</h3>
+{{ component('breadcrumb', { 
+    'items': 
+    [
+        {
+        "content": "An item",
+        },
+        {
+        "content": "Second item",
+        "active": true,
+        },
+        {
+        "content": "Third item",
+        "disabled": true
+        },
+        {
+        "content": "Fourth item",
+        },
+        {
+        "content": "Fifth item",
+        },
+    ],
+    'options': {
+      'id': 'my-list-group-id',
+      "class": "list-group-class",
+      "containerTag": "ul",
+      "innerTag": "li"
+    }
+  }
+) 
+}}
+
+<h3>List group links and buttons</h3>
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": "An item",
+        },
+        {
+          "content": "Second item",
+        },
+        {
+          "content": "Third item",
+          "active": true,
+        },
+        {
+          "content": "Fourth item",
+        },
+        {
+          "content": "Fifth item",
+          "disabled": true
+        },
+    ],
+    'options': {
+      'id': 'my-list-group-id',
+      "class": "list-group-class",
+    }
+  }
+) 
+}}
+
+
+<h3>List group numbered</h3>
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": '<div class="ms-2 me-auto">
+      <div class="fw-bold">Subheading</div>
+      Cras justo odio
+    </div>
+    <span class="badge bg-primary rounded-pill">14</span>',
+          "class": "list-group-item d-flex justify-content-between align-items-start"
+        },
+        {
+          "content": '<div class="ms-2 me-auto">
+          <div class="fw-bold">Subheading</div>
+            Cras justo odio
+          </div>
+          <span class="badge bg-warning rounded-pill">14</span>',
+          "class": "list-group-item d-flex justify-content-between align-items-start"
+        },
+        {
+          "content": '<div class="ms-2 me-auto">
+            <div class="fw-bold">Subheading</div>
+              Cras justo odio
+            </div>
+            <span class="badge bg-dark rounded-pill">14</span>',
+          "class": "list-group-item d-flex justify-content-between align-items-start",
+          "active": true,
+        },
+    ],
+    'options': {
+      "containerTag": "ol",
+      "innerTag": "li",
+      "numbered": true
+    }
+  }
+) 
+}}
+
+<h3>Horizontal</h3>
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": "An item" 
+        },
+        {
+          "content": "A second item"
+        },
+        {
+          "content": "A third item"
+        }
+    ],
+    'options': {
+      "class": "list-group list-group-horizontal",
+      "containerTag": "ul",
+      "innerTag": "li",
+    }
+  })
+}}
+
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": "An item" 
+        },
+        {
+          "content": "A second item"
+        },
+        {
+          "content": "A third item"
+        }
+    ],
+    'options': {
+      "class": "list-group list-group-horizontal-sm",
+      "containerTag": "ul",
+      "innerTag": "li",
+    }
+  })
+}}
+
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": "An item" 
+        },
+        {
+          "content": "A second item"
+        },
+        {
+          "content": "A third item"
+        }
+    ],
+    'options': {
+      "class": "list-group list-group-horizontal-xxl",
+      "containerTag": "ul",
+      "innerTag": "li",
+    }
+  })
+}}
+
+
+<h3>Custom content</h3>
+{{ component('list_group', { 
+    'items': 
+    [
+        {
+          "content": '<div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small>3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small>And some small print.</small>',
+    "active": true
+        },
+        {
+          "content": '<div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>'
+        },
+        {
+          "content": '<div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">List group item heading</h5>
+      <small class="text-muted">3 days ago</small>
+    </div>
+    <p class="mb-1">Some placeholder content in a paragraph.</p>
+    <small class="text-muted">And some muted small print.</small>'
+        }
+    ],
+    'options': {
+      "class": "list-group",
+    }
+  })
+}}
+
+<h2>JavaScript behaviour</h2>
+<div class="row">
+  <div class="col-4">
+  {{ component('list_group', {
+      'items': 
+      [
+        {
+          "content": "Home",
+          "url": "#home",
+          "role": "tab",
+          "toggle": "list"
+        },
+        {
+          "content": "Profile",
+          "url": "#profile",
+          "role": "tab",
+          "toggle": "list"
+        },
+        {
+          "content": "Messages",
+          "url": "#messages",
+          "role": "tab",
+          "toggle": "list"
+        },
+        {
+          "content": "Settings",
+          "url": "#settings",
+          "role": "tab",
+          "toggle": "list"
+        },
+      ],
+      'options': 
+      {
+        "id": "list-tab",
+        "role": "tablist"
+      }
+    }
+  )
+  }}
+  </div>
+
+  <div class="col-8">
+  {{ component('list_group', {
+      'items':
+      [
+        {
+          "content": "Some placeholder content in a paragraph relating to \"Home\". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.",
+          "class": "tab-pane fade",
+          "role": "tabpanel",
+          "id": "home"
+        },
+        {
+          "content": "Some placeholder content in a paragraph relating to \"Profile\". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.",
+          "class": "tab-pane fade",
+          "role": "tabpanel",
+          "id": "profile"
+        },
+        {
+          "content": "Some placeholder content in a paragraph relating to \"Messages\". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.",
+          "class": "tab-pane fade",
+          "role": "tabpanel",
+          "id": "messages"
+        },
+        {
+          "content": "Some placeholder content in a paragraph relating to \"Settings\". And some more content, used here just to pad out and fill this tab panel. In production, you would obviously have more real content here. And not just text. It could be anything, really. Text, images, forms.",
+          "class": "tab-pane fade",
+          "role": "tabpanel",
+          "id": "settings"
+        },
+      ],
+      'options': 
+      {
+        "id": "nav-tabContent",
+        "role": "tablist",
+        "class": "tab-content",
+        "innerTag": "div"
+      }
+    })
+  }}
+  </div>
+
+{% endblock %}

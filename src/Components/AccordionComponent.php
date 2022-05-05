@@ -23,7 +23,7 @@ class AccordionComponent
             $itemsResolver
                 ->setPrototype(true)
                 ->setRequired(['label', 'content'])
-                ->setDefaults(['alwaysOpen' => false, 'show' => false])
+                ->setDefaults(['alwaysOpen' => false, 'show' => false, 'raw' => true])
                 ->setAllowedTypes('alwaysOpen', 'bool')
                 ->setAllowedTypes('show', 'bool')
             ;

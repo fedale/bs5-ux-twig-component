@@ -41,6 +41,14 @@ class ComponentController extends AbstractController
     }
 
     /**
+     * @Route("/bs5/breadcrumb", name="bs5_breadcrumb")
+     */
+    public function breadcrumb(): Response
+    {
+        return $this->renderComponent('breadcrumb');
+    }
+
+    /**
      * @Route("/bs5/button", name="bs5_button")
      */
     public function button(): Response
@@ -48,6 +56,13 @@ class ComponentController extends AbstractController
         return $this->renderComponent('button');
     }
 
+    /**
+     * @Route("/bs5/button_group", name="bs5_button_group")
+     */
+    public function buttonGroup(): Response
+    {
+        return $this->renderComponent('button_group');
+    }
 
     /**
      * @Route("/bs5/list_group", name="bs5_list_group")

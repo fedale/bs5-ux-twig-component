@@ -6,8 +6,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
 
-#[AsTwigComponent('list_group')]
-class ListGroupComponent 
+#[AsTwigComponent('breadcrumb')]
+class BreadcrumbComponent 
 {
     public $options = [];
 

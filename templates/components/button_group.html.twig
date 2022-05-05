@@ -1,0 +1,12 @@
+<{{ options.containerTag }}
+    id="{{ options.id }}"
+    class="{{ options.class }} dropdown-toggle"
+    data-bs-toggle="dropdown"
+    data-controller="button-group"
+    role="{{ options.role }}"
+>Button nested
+{% for item in items %}
+    {{ item | raw }}
+{% endfor %}
+
+</{{ options.containerTag }}>

@@ -26,7 +26,7 @@
         'content':  'Notification '  ~ component('badge', { 
             'content': random(1, 100),
             'text': 'light',
-            'type': 'secondary'
+            'type': random(['secondary', 'success', 'warning', 'info', 'light', 'dark'])
           }) 
         ,
         'text': type in ['warning', 'info', 'light'] ? 'dark' : 'light'

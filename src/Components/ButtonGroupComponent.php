@@ -6,18 +6,20 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\UX\TwigComponent\Attribute\AsTwigComponent;
 use Symfony\UX\TwigComponent\Attribute\PreMount;
 
-#[AsTwigComponent('list_group')]
-class ListGroupComponent 
+#[AsTwigComponent('button_group')]
+class ButtonGroupComponent 
 {
     public $options = [];
 
     public array $items = [];
 
+    public string $direction;
+
     #[PreMount]
     public function preMount(array $data): array
     {
         $resolver = new OptionsResolver();
-        $resolver->setDefault('items', function (OptionsResolver $itemsResolver) {
+/*        $resolver->setDefault('items', function (OptionsResolver $itemsResolver) {
             $itemsResolver
                 ->setPrototype(true)
                 ->setRequired(['content'])
@@ -28,7 +30,7 @@ class ListGroupComponent
                     'disabled' => false, 
                     'url' => '#',
                     'toggle' => null,
-                    'role' => 'group',
+                    'role' => null,
                     'raw' => true
                 ])
                 ->setAllowedTypes('active', 'bool')
@@ -38,16 +40,18 @@ class ListGroupComponent
                 ->setAllowedTypes('toggle',  ['null', 'string'])
             ;
         });
-
+*/
+        $resolver->setRequired('items');
+        $resolver->setDefault('direction', '');
         $resolver->setDefault('options', function (OptionsResolver $optionsResolver) {
             $optionsResolver
                 ->setDefaults([
-                    'id' => 'list-group-' . \uniqid(),
+                    'id' => 'button-group-' . \uniqid(),
                     'containerTag' => 'div',
                     'innerTag' => 'a',
                     'flush' => false,
                     'numbered' => false,
-                    'class' => 'list-group',
+                    'class' => 'btn-group',
                     'class-item' => 'list-group-item',
                     'role' => null
                 ])

@@ -11,6 +11,6 @@
     {% if tag in ['input', 'submit', 'reset'] %}
         >
     {% else %}
-        >{{ content | raw }}
+        >{% if raw %}{{ content | raw }}{% else %}{{ content }}{% endif %}
     {% endif %}
 </{{ tagName }}>

@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+<h1>{{ component }}</h1>
+
+<h3>Examples</h3>
+{{ component('button_group', {
+    'items': [
+        component('button', { 
+          'type': 'primary',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'secondary',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'success',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'danger',
+          'content': 'button'|capitalize,
+        }),
+    ]
+  })
+}}
+
+<h3>Examples with A</h3>
+{{ component('button_group', {
+    'items': [
+        component('button', { 
+          'type': 'primary',
+          'content': 'button'|capitalize,
+          'tag': 'link'
+        }),
+        component('button', { 
+          'type': 'secondary',
+          'content': 'button'|capitalize,
+          'tag': 'link'
+        }),
+        component('button', { 
+          'type': 'success',
+          'content': 'button'|capitalize,
+          'tag': 'link'
+        }),
+        component('button', { 
+          'type': 'danger',
+          'content': 'button'|capitalize,
+          'tag': 'link',
+        }),
+    ]
+  })
+}}
+
+<h3>Examples with outline buttons</h3>
+{{ component('button_group', {
+    'items': [
+        component('button', { 
+          'type': 'primary',
+          'content': 'button'|capitalize,
+          'outline': true,
+          'text': ''
+        }),
+        component('button', { 
+          'type': 'secondary',
+          'content': 'button'|capitalize,
+          'outline': true,
+          'text': ''
+        }),
+        component('button', { 
+          'type': 'success',
+          'content': 'button'|capitalize,
+          'outline': true,
+          'text': ''
+        })
+    ]
+  })
+}}
+
+<h3>Nested variation</h3>
+{{ component('button_group', {
+    'items': [
+        component('button', { 
+          'type': 'primary',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'secondary',
+          'content':  component('button_group', {
+                'items': [
+                  component('button', { 
+                    'type': 'success',
+                    'content': 'button'|capitalize,
+                  }),
+                  component('button', { 
+                    'type': 'danger',
+                    'content': 'button'|capitalize,
+                  }),
+              ]
+          })
+        }),
+       
+    ],
+    'direction': 'vertical'
+  })
+}}
+
+<h3>Vertical variation</h3>
+{{ component('button_group', {
+    'items': [
+        component('button', { 
+          'type': 'primary',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'secondary',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'success',
+          'content': 'button'|capitalize,
+        }),
+        component('button', { 
+          'type': 'danger',
+          'content': 'button'|capitalize,
+        }),
+    ],
+    'direction': 'vertical'
+  })
+}}
+
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-primary">Left</button>
+  <button type="button" class="btn btn-primary">Middle</button>
+  <button type="button" class="btn btn-primary">Right</button>
+</div>
+
+{% endblock %}

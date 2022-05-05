@@ -17,6 +17,8 @@ class AlertComponent
 
     public bool $dismiss;
 
+    public bool $raw;
+
     #[PreMount]
     public function preMount(array $data): array
     {
@@ -26,6 +28,7 @@ class AlertComponent
             'type' => 'default',
             'content' => 'my content',
             'dismiss' => false,
+            'raw' => true,
         ]);
 
         return $resolver->resolve($data);

@@ -27,8 +27,7 @@
       {% if item.alwaysOpen %} data-bs-parent="#{{ options['id'] }}" {% endif %}
     >
       <div class="{{ options['class-body'] }}">
-        {{ item.content | raw }}
-        
+        {% if item.raw %}{{ item.content | raw }}{% else %}{{ item.content }}{% endif %}
       </div>
     </div>
   </div>
