@@ -1,26 +1,19 @@
-<{{ options.containerTag }}
-    id="{{ options.id }}"
-    class="{{ options.class }} {{ options.flush ? 'list-group-flush' : '' }} {{ options.numbered ? 'list-group-numbered' : '' }}"
-    data-controller="list-group"
-    role="{{ options.role }}"
->
+<nav  aria-label="breadcrumb">
+<{{ options.containerTag }} id="{{ options.id }}" class="{{ options.class }}">
 {% for item in items %}
-<{{ options.innerTag }}
-    {% if options.innerTag == 'a' %}
-    href="{{ item.url }}"
+<{{ options.innerTag }} class="{{ item.class }} {{ item.active ? 'active' : '' }}">
+    {% if loop.first %}
+        <a href="{{ item.url }}">
+            {% if item.raw %}{{ item.content | raw }}{% else %}{{ item.content }}{% endif %}
+        </a>
+    {% elseif loop.last %}
+        {% if item.raw %}{{ item.content | raw }}{% else %}{{ item.content }}{% endif %}
+    {% else %}
+        <a href="{{ item.url }}">
+            {% if item.raw %}{{ item.content | raw }}{% else %}{{ item.content }}{% endif %}
+        </a>
     {% endif %}
-    class="{{ item.class }}
-    {{ item.disabled ? 'disabled' : '' }}
-    {{ options.innerTag == 'a' or options.innerTag == 'button' ? 'list-group-item-action' : '' }}
-    {{ item.active ? 'active' : '' }}
-    "
-    {% if item.role %}role="{{ item.role }}"{% endif %}
-    {% if item.toggle %}data-bs-toggle="{{ item.toggle }}"{% endif %}
-    {% if item.active %}aria-current="true"{% endif %}
-    {% if item.disabled %}aria-current="true"{% endif %}
->
-    {% if item.raw %}{{ item.content | raw }}{% else %}{{ item.content }}{% endif %}
 </{{ options.innerTag }}>
 {% endfor %}
-
 </{{ options.containerTag }}>
+</nav>

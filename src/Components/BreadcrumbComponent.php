@@ -9,9 +9,46 @@ use Symfony\UX\TwigComponent\Attribute\PreMount;
 #[AsTwigComponent('breadcrumb')]
 class BreadcrumbComponent 
 {
-    public $options = [];
+     /**
+     * @var string the name of the breadcrumb container tag.
+     */
+    public $tag = 'nav';
 
-    public array $items = [];
+    /**
+     * @var array the HTML attributes for the breadcrumb container tag.
+     */
+    public $options; // = ['class' => 'breadcrumb'];
+    
+    /**
+     * @var bool whether to HTML-encode the link labels.
+     */
+    public $encodeLabels = true;
+    
+    
+    
+    /**
+     * @var array list of links to appear in the breadcrumbs. If this property is empty,
+     * the widget will not render anything. Each array element represents a single link in the breadcrumbs
+     * with the following structure:
+     *
+     * ```php
+     * [
+     *     'label' => 'label of the link',  // required
+     *     'url' => 'url of the link',      // optional
+     *     'template' => 'own template of the item', // optional, if not set $this->itemTemplate will be used
+     *     'active' => 'true|false', // optional, if link is active or not
+     *     'class' => 'external', // optional, css classes
+     * ]
+     * ```
+     * Note that first item is intended as home link. 
+     */
+    public $items = [];
+
+    /**
+     * @var string the string used as divider between breadcrumb items
+     */
+    public $divider = '>';
+
 
     #[PreMount]
     public function preMount(array $data): array
@@ -23,32 +60,26 @@ class BreadcrumbComponent
                 ->setRequired(['content'])
                 ->setDefaults([
                     'id' => null, 
-                    'class' => 'list-group-item', 
+                    'class' => 'breadcrumb-item', 
                     'active' => false, 
-                    'disabled' => false, 
+                    'visible' => true, 
                     'url' => '#',
-                    'toggle' => null,
-                    'role' => 'group',
                     'raw' => true
                 ])
                 ->setAllowedTypes('active', 'bool')
-                ->setAllowedTypes('disabled', 'bool')
+                ->setAllowedTypes('visible', 'bool')
                 ->setAllowedTypes('id', ['null', 'string'])
-                ->setAllowedTypes('role', ['null', 'string'])
-                ->setAllowedTypes('toggle',  ['null', 'string'])
             ;
         });
 
         $resolver->setDefault('options', function (OptionsResolver $optionsResolver) {
             $optionsResolver
                 ->setDefaults([
-                    'id' => 'list-group-' . \uniqid(),
-                    'containerTag' => 'div',
-                    'innerTag' => 'a',
-                    'flush' => false,
-                    'numbered' => false,
-                    'class' => 'list-group',
-                    'class-item' => 'list-group-item',
+                    'id' => 'breadcrumb-' . \uniqid(),
+                    'containerTag' => 'ol',
+                    'innerTag' => 'li',
+                    'class' => 'breadcrumb',
+                    'class-item' => '',
                     'role' => null
                 ])
                 ->setAllowedTypes('role', ['null', 'string'])

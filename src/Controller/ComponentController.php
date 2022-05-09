@@ -65,6 +65,14 @@ class ComponentController extends AbstractController
     }
 
     /**
+     * @Route("/bs5/card", name="bs5_card")
+     */
+    public function card(): Response
+    {
+        return $this->renderComponent('card');
+    }
+
+    /**
      * @Route("/bs5/list_group", name="bs5_list_group")
      */
     public function listGroup(): Response
