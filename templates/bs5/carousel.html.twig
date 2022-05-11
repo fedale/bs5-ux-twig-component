@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+
+<h1>{{ component }}</h1>
+
+<h2>Slides only</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        },
+    ],
+    'options': {
+    }
+    }
+) 
+}}
+
+<h2>With controls</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        },
+    ],
+    'options': {
+      'controls': true
+    }
+    }
+) 
+}}
+
+<h2>With indicators</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        },
+    ],
+    'options': {
+      'controls': true,
+      'indicators': true
+    }
+    }
+) 
+}}
+
+<h2>With captions</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        "caption": "This is the first caption of the slide"
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        },
+    ],
+    'options': {
+      'controls': true,
+      'indicators': true
+    }
+    }
+) 
+}}
+
+<h2>Crossfade</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        "caption": "This is the first caption of the slide"
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        },
+    ],
+    'options': {
+      'controls': true,
+      'indicators': true,
+      'class': 'carousel slide carousel-fade'
+    }
+    }
+) 
+}}
+
+<h2>Individual .carousel-item interval</h2>
+{{ component('carousel', { 
+    'items': 
+    [
+        {
+        "label": "Carousel Item #1",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#555" dy=".3em">First slide</text></svg>',
+        "caption": "This is the first caption of the slide",
+        "interval": "10000"
+        },
+        {
+        "label": "Carousel Item #2",
+        "content": '<svg class="bd-placeholder-img bd-placeholder-img-lg d-block w-100" width="800" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: First slide" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#9ACD32"></rect><text x="50%" y="50%" fill="#fff" dy=".3em">Second slide</text></svg>',
+        "interval": "2000"
+        },
+    ],
+    'options': {
+      'controls': true,
+      'indicators': true,
+    }
+    }
+) 
+}}
+
+
+{% endblock %}

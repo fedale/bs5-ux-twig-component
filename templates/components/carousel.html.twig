@@ -1,0 +1,36 @@
+<div 
+  id="{{ options['id'] }}" 
+  class="{{ options['class'] }}" 
+  data-controller="carousel"
+  data-bs-ride="carousel"
+>
+<div class="carousel-inner">
+  {% if options['indicators'] %}
+    <div class="carousel-indicators">
+      {% for item in items %}
+        <button type="button" data-bs-target="#{{ options['id'] }}" data-bs-slide-to="{{ loop.index0 }}" class="{% if loop.first %}active{% endif %}"{% if loop.first %}aria-current="true"{% endif %} aria-label="{{ item.label }}"></button>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% for item in items %}
+    <div class="{{ options['class-item'] }} {% if loop.first %}active{% endif %}" {% if item.interval %}data-bs-interval="{{ item.interval }}"{% endif %}>
+      {{ item.content | raw}}
+      {% if item.caption %}
+         <div class="carousel-caption d-none d-md-block">
+          {{ item.caption }}
+      </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+  {% if options['controls'] %}
+  <button class="carousel-control-prev" type="button" data-bs-target="#{{ options['id'] }}" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#{{ options['id'] }}" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+  {% endif %}
+</div>
+</div>

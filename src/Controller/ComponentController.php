@@ -73,6 +73,14 @@ class ComponentController extends AbstractController
     }
 
     /**
+     * @Route("/bs5/carousel", name="bs5_carousel")
+     */
+    public function carousel(): Response
+    {
+        return $this->renderComponent('carousel');
+    }
+
+    /**
      * @Route("/bs5/list_group", name="bs5_list_group")
      */
     public function listGroup(): Response
