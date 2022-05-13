@@ -1,0 +1,35 @@
+<nav 
+  id="{{ options['id'] }}" 
+  class="{{ options['class'] }}" 
+  data-controller="carousel"
+  data-bs-ride="carousel"
+>
+<ul class="pagination {{ size }} {{ alignment }}">
+  {% if firstPageLabel %}
+    <li class="{{ options['class-item'] }}">
+      <a href="#" class="{{ options['class-link'] }}"><span aria-hidden="true">{{ firstPageLabel|raw }}</span></a>
+    </li>
+  {% endif %}
+  {% if prevPageLabel %}
+    <li class="{{ options['class-item'] }}">
+      <a href="#" class="{{ options['class-link'] }}"><span aria-hidden="true">{{ prevPageLabel|raw }}</span></a>
+    </li>
+  {% endif %}
+  {% for item in items|slice(0, maxButtonCount) %}
+    <li class="{{ options['class-item'] }} {% if loop.first %}active{% endif %}">
+      <a href="#" class="{{ options['class-link'] }}">{{ loop.index }}</a>
+    </li>
+  {% endfor %}
+  {% if nextPageLabel %}
+    <li class="{{ options['class-item'] }}">
+      <a href="#" class="{{ options['class-link'] }}"><span aria-hidden="true">{{ nextPageLabel|raw }}</span></a>
+    </li>
+  {% endif %}
+  {% if lastPageLabel %}
+    <li class="{{ options['class-item'] }}">
+      <a href="#" class="{{ options['class-link'] }}"><span aria-hidden="true">{{ lastPageLabel|raw }}</span></a>
+    </li>
+  {% endif %}
+
+</ul>
+</nav>

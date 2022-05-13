@@ -89,6 +89,14 @@ class ComponentController extends AbstractController
     }
 
     /**
+     * @Route("/bs5/pagination", name="bs5_pagination")
+     */
+    public function pagination(): Response
+    {
+        return $this->renderComponent('pagination');
+    }
+
+    /**
      * @Route("/bs5/modal", name="bs5_modal")
      */
     public function modal(): Response
