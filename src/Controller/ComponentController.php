@@ -105,6 +105,14 @@ class ComponentController extends AbstractController
     }
 
     /**
+     * @Route("/bs5/toast", name="bs5_toast")
+     */
+    public function toast(): Response
+    {
+        return $this->renderComponent('toast');
+    }
+
+    /**
      * 
      */
     private function renderComponent(string $component = null): Response {
