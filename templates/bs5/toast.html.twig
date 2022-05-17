@@ -3,11 +3,18 @@
 {% block body%}
 <h1>{{ component }}</h1>
 
-<h3>Default toast</h3>
-{{ component('toast') }}
 
-<div data-controller="button_toast">
-<button data-action="update-map@window->map#updateHotspotLocation">Show Toast</button>
-</div>
+{{ form_start(toast_form) }}
+{{ form_row(toast_form.type) }}
+{{ form_row(toast_form.title) }}
+{{ form_row(toast_form.message) }}
+{{ form_row(toast_form.Submit) }}
+{{ form_end(toast_form, {render_rest: false}) }}
 
+{{ component('toast', {
+        'type':  field_value(toast_form.type) ,
+        'title': field_value(toast_form.title),
+        'message': field_value(toast_form.message)|markdown_to_html 
+    }) 
+}}
 {% endblock %}

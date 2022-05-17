@@ -50,6 +50,7 @@ class ToastComponent
         $resolver->setDefaults([
             'id' => 'toast-' . \uniqid(),
             'type' => 'default',
+            'title' => 'my message',
             'message' => 'my message',
             'raw' => true,
         ]);

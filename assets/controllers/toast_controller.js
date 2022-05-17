@@ -8,6 +8,7 @@ export default class extends Controller {
     connect() {
         console.log('toast controller');
         this.toast = new Toast(this.element);
+        this.toast.show();
         
     }
 

@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Form\ToastFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -107,9 +109,20 @@ class ComponentController extends AbstractController
     /**
      * @Route("/bs5/toast", name="bs5_toast")
      */
-    public function toast(): Response
+    public function toast(Request $request): Response
     {
-        return $this->renderComponent('toast');
+        $form = $this->createForm(ToastFormType::class);
+        $form->handleRequest($request);
+        $component = 'toast';
+
+        if ($form->isSubmitted() && $form->isValid() ) {
+            dump('OK');
+        }
+
+        return $this->renderForm('bs5/' . $component .'.html.twig', [
+            'component' => $component,
+            'toast_form' => $form
+        ]);
     }
 
     /**
