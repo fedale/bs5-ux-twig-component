@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block body%}
+<h1>{{ component }}</h1>
+
+
+{{ form_start(form) }}
+{{ form_row(form.type) }}
+{{ form_row(form.spinner) }}
+{{ form_row(form.size) }}
+{{ form_row(form.Submit) }}
+{{ form_end(form, {render_rest: false}) }}
+
+{{ component('spinner', {
+        'type':  field_value(form.type),
+        'spinner':  field_value(form.spinner),
+        'size':  field_value(form.size),
+    }) 
+}}
+
+
+{# {{ component('button', { 
+        'type': field_value(form.type),
+        'content': component('spinner', ) ~ field_value(form.type),
+        'text': field_value(form.type) in ['warning', 'info', 'light'] ? 'dark' : field_value(form.type) == 'link' ? '' : 'light',
+        'disabled': true
+      }) 
+  }}
+   #}
+
+
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\ToastFormType;
+use App\Form\SpinnerFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -106,6 +107,25 @@ class ComponentController extends AbstractController
         return $this->renderComponent('modal');
     }
 
+     /**
+     * @Route("/bs5/spinner", name="bs5_spinner")
+     */
+    public function spinner(Request $request): Response
+    {
+        $form = $this->createForm(SpinnerFormType::class);
+        $form->handleRequest($request);
+        $component = 'spinner';
+
+        if ($form->isSubmitted() && $form->isValid() ) {
+            dump('OK');
+        }
+
+        return $this->renderForm('bs5/' . $component .'.html.twig', [
+            'component' => $component,
+            'form' => $form
+        ]);
+    }
+
     /**
      * @Route("/bs5/toast", name="bs5_toast")
      */
@@ -121,7 +141,7 @@ class ComponentController extends AbstractController
 
         return $this->renderForm('bs5/' . $component .'.html.twig', [
             'component' => $component,
-            'toast_form' => $form
+            'form' => $form
         ]);
     }
 

@@ -4,17 +4,17 @@
 <h1>{{ component }}</h1>
 
 
-{{ form_start(toast_form) }}
-{{ form_row(toast_form.type) }}
-{{ form_row(toast_form.title) }}
-{{ form_row(toast_form.message) }}
-{{ form_row(toast_form.Submit) }}
-{{ form_end(toast_form, {render_rest: false}) }}
+{{ form_start(form) }}
+{{ form_row(form.type) }}
+{{ form_row(form.title) }}
+{{ form_row(form.message) }}
+{{ form_row(form.Submit) }}
+{{ form_end(form, {render_rest: false}) }}
 
 {{ component('toast', {
-        'type':  field_value(toast_form.type) ,
-        'title': field_value(toast_form.title),
-        'message': field_value(toast_form.message)|markdown_to_html 
+        'type':  field_value(form.type) ,
+        'title': field_value(form.title),
+        'message': field_value(form.message)|markdown_to_html 
     }) 
 }}
 {% endblock %}
